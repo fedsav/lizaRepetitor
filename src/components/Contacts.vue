@@ -31,7 +31,8 @@ defineExpose({
 
 <style scoped lang="scss">
 .contacts {
-  margin-top: 50px;
+  min-height: 100vh;
+  padding-top: 40%;
   
   .contacts__title {
     font-family: 'Montserrat-Medium';

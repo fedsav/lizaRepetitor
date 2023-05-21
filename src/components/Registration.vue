@@ -59,6 +59,7 @@ const changingModal = () => {
     }
 
     .reg__toForm {
+        width: 100%;
         position: relative;
         bottom: 0px;
         max-width: 800px;

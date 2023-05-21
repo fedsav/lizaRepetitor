@@ -49,7 +49,7 @@ defineExpose({
     overflow: hidden;
 
     .aboutme__heading {
-        margin-top: 50px;
+        margin-top: 100px;
         display: flex;
         justify-content: end;
 
