@@ -1,0 +1,76 @@
+@use 'vuetify/styles' with (
+  $body-font-family: 'Montserrat-Medium', 
+);
+
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+body {
+  background-color: #F6F6F6;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Montserrat-ExtraBold';
+  src: url(./assets/fonts/Montserrat-ExtraBold.ttf);
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: 'Montserrat-Italic';
+  src: url(./assets/fonts/Montserrat-Italic.ttf);
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url(./assets/fonts/Montserrat-Light.ttf);
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url(./assets/fonts/Montserrat-Medium.ttf);
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
+  font-style: normal; 
+  font-weight: normal; 
+}
+
