@@ -180,7 +180,6 @@ let formSend = ref(false)
 
             .form__input {
                 background-color: transparent;
-                border: none;
                 border-bottom: 1px solid #000;
                 width: 140px;
                 font-family: 'Montserrat-Light';
@@ -190,6 +189,9 @@ let formSend = ref(false)
                 letter-spacing: 2px;
 
                 &_area {
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
                     text-align: left;
                     height: 44px;
                     resize: none;
