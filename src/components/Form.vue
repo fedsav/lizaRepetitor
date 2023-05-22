@@ -106,7 +106,7 @@ function sendForm(){
     validate()
     if (approved) {
 
-        let message = `<b> Новая заявка! </b>\n\nЗаявку отправил <b>${info.name}</b>. Ему <b>${info.age}</b> лет и он учится в <b>${info.whatClass}</b> классе.\n\n<i>Какова ценность этих занятий для тебя?</i> - ${info.lessonsVal}\n\n<i>Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</i> - ${info.expectations}\n\n<i>Ссылка на соц. сети/почту, для обратной связи:</i> ${info.contact}`
+        let message = `<b> Новая заявка! </b>\n\nЗаявку отправил(a) <b>${info.name}</b>. Ему/ей <b>${info.age}</b> лет, учится в <b>${info.whatClass}</b> классе.\n\n<i>Какова ценность этих занятий для тебя?</i> - ${info.lessonsVal}\n\n<i>Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</i> - ${info.expectations}\n\n<i>Ссылка на соц. сети/почту, для обратной связи:</i> ${info.contact}`
       
         console.log(message);
         
