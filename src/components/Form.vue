@@ -1,6 +1,8 @@
 <template>
   <section class="wrapper" @submit.prevent="sendForm">
-        <form action="" class="form"  @submit.prevent="" v-show="!formSend">
+    <transition>
+        
+        <form action="" class="form"  @submit.prevent="" v-if="!formSend">
             <legend class="form__title">несколько слов о тебе</legend>
             <div class="form__element">
                 <label class="form_inputName" for="name">Твое имя:</label>
@@ -49,16 +51,17 @@
             <button class="form__submit" @click="emit('changingModal')" ref="btn">Записаться!</button>
         </form>
 
-        <transition>
-            <div class="done" v-show="formSend">
-                <span class="done__txt">
-                    Поздравляю, вы записаны!
-                </span>
-                <span class="done__txt">
-                    Скоро я с вами свяжусь.
-                </span>
-            </div>
-        </transition>
+        <div class="done" v-else>
+            <span class="done__txt">
+                Поздравляю, вы записаны!
+            </span>
+            <span class="done__txt">
+                Скоро я с вами свяжусь.
+            </span>
+        </div>
+
+    </transition>
+
     <button type="submit" class="modal__close" @click="$emit('changeModal')"></button>
   </section>
 </template>
@@ -78,7 +81,6 @@ const changingModal = () => {
 }
 
 // Данные полей
-
 const info = reactive({
   name: '',
   age: '',
@@ -102,46 +104,37 @@ function validate () {
    }
 }
 
+//Очистка
+function clear () {
+    for (let key in info) {
+        info[key] = ''
+    }
+}
+
 // Отправка
+let formSend = ref(false);
+
 function sendForm(){
     validate()
     if (approved) {
 
         let message = `<b> Новая заявка! </b>\n\nЗаявку отправил(a) <b>${info.name}</b>. Ему/ей <b>${info.age}</b> лет, учится в <b>${info.whatClass}</b> классе.\n\n<i>Какова ценность этих занятий для тебя?</i> - ${info.lessonsVal}\n\n<i>Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</i> - ${info.expectations}\n\n<i>Ссылка на соц. сети/почту, для обратной связи:</i> ${info.contact}`
-      
-        console.log(message);
         
         axios.post(URL, {
           chat_id: CHAT_ID,
           parse_mode: 'HTML',
           text: message,
         })
-        
-        info.age = ''
-        info.name = ''
-        info.whatClass = ''
-        info.lessonsVal = ''
-        info.contact = ''
-        info.expectations = ''
-
-        alert('Поздравляю, вы записаны! Скоро я с вами свяжусь!')
+        clear ()
+        formSend = true
     }
 }
-
-// Проверка отправки
-let formSend = ref(false)
-
-watch ((formSend) => {
-
-}) 
-
 </script>
 
 <style scoped lang="scss">
-
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
 }
 
 .v-enter-from,
@@ -164,7 +157,7 @@ watch ((formSend) => {
         flex-direction: column;
         gap: 32px;
         width: 230px;
-        z-index: 1;
+
 
         .form__title {
             font-family: 'Montserrat-Medium';
@@ -246,7 +239,6 @@ watch ((formSend) => {
         background-image: url('../assets/close.svg');
         background-size: cover;
     }
-
     .done {
         padding-top: 50%;
         position: relative;
@@ -259,7 +251,7 @@ watch ((formSend) => {
         align-items: center;
         text-align: center;
         background-color: rgba(255, 184, 176, 1);
-        z-index: 2;
+
 
         .done__txt {
             max-width: 60%;
