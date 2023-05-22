@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+
 .hello {
     min-height: 667px;
     min-width: 100%;
@@ -44,7 +46,6 @@ export default {
 
     .hello__text {
         font-family: 'Montserrat-Medium';
-        font-style: normal;
         font-weight: 500;
         font-size: 13px;
         line-height: 16px;
@@ -105,5 +106,24 @@ export default {
         object-fit: contain;
     }
 
+    @media screen and (min-width: 600px) { 
+
+        .hello__header {
+          gap: 35px;
+        }
+        .hello__text {
+          font-size: 1.8rem;
+        }
+        .hello__bio1, .hello__bio2, .hello__italic {
+          font-size: 2rem !important;
+        }
+
+        .hello__bio1, .hello__bio2, .hello__italic {
+            width: 50% !important;
+            line-height: 2rem;
+        }
+      }
 }
+
+
 </style>

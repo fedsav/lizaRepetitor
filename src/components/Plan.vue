@@ -1,5 +1,6 @@
 <template>
   <section class="wrapper">
+    <div class="b-img"></div>
     <div class="plan">
         <h1 class="plan__title">Что пройдем</h1>
         <ul class="plan__list">
@@ -32,18 +33,25 @@
     position: relative;
     margin-top: 50px;
     width: 100%;
-    background-color: #C4C4C4;
+    background-color: #D69F98;
     
+    .b-img {
+        position: absolute;
+        background-image: url('../assets/plan/m_plan.png');
+        background-size:contain;
+        background-position:  center;
+        min-height: 100%;
+        width: 100%;
+    }
     .plan {
         position: relative;
         margin: 0 auto;
         min-height: 667px;
-        max-width: 600px;
+        max-width: 375px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: url('../assets/plan/m_plan.png');
-        background-size: cover;
+
 
         .plan__title {
             margin: 130px 25px 0 auto;
@@ -107,6 +115,16 @@
                 top: 385px;
                 right: 129px;
             }
+        }
+    }
+
+    @media screen and (min-width: 600px) { 
+        .b-img { 
+            background-position: left;
+        }
+
+        .plan {
+            margin: 0 0 0 auto;
         }
     }
 }

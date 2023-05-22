@@ -9,44 +9,38 @@
   
         <div class="lessons__item lessons__item_practice">
           <span class="lessons__point">Практику</span>
-          <object data="oarr1.svg" type="image/svg+xml" class="lessons__arrow">
-            <img src="../assets/lessons/oarr1.svg" alt="">
-          </object>
+          <img src="../assets/lessons/oarr1.svg" alt="" class="lessons__arrow_m">
+          <img src="" alt="" class="lessons__arrow_d">
         </div>
   
         <div class="lessons__item lessons__item_atmosphere">
           <span class="lessons__point">Атмосферу</span>
-          <object data="oarr2.svg" type="image/svg+xml" class="lessons__arrow">
-            <img src="../assets/lessons/oarr2.svg" alt="">
-          </object>
+          <img src="../assets/lessons/oarr2.svg" alt="" class="lessons__arrow_m">
+          <img src="" alt="" class="lessons__arrow_d">
         </div>
   
         <div class="lessons__item lessons__item_knowledge">
           <span class="lessons__point">Знания</span>
-          <object data="oarr3.svg" type="image/svg+xml" class="lessons__arrow">
-            <img src="../assets/lessons/oarr3.svg" alt="">
-          </object>
+          <img src="../assets/lessons/oarr3.svg" alt="" class="lessons__arrow_m">
+          <img src="" alt="" class="lessons__arrow_d">
         </div>
   
         <div class="lessons__item lessons__item_team">
           <span class="lessons__point ">Команду</span>
-          <object data="oarr4.svg" type="image/svg+xml" class="lessons__arrow">
-            <img src="../assets/lessons/oarr4.svg" alt="">
-          </object>
+          <img src="../assets/lessons/oarr4.svg" alt="" class="lessons__arrow_m">
+          <img src="" alt="" class="lessons__arrow_d">
         </div>
   
         <div class="lessons__item lessons__item_motivation" >
           <span class="lessons__point ">Мотивацию</span>
-          <object data="oarr5.svg" type="image/svg+xml" class="lessons__arrow">
-            <img src="../assets/lessons/oarr5.svg" alt="">
-          </object>
+          <img src="../assets/lessons/oarr5.svg" alt="" class="lessons__arrow_m">
+          <img src="" alt="" class="lessons__arrow_d">
         </div>
   
         <div class="lessons__item lessons__item_confidence" >
           <span class="lessons__point ">Уверенность</span>
-          <object data="oarr6.svg" type="image/svg+xml" class="lessons__arrow">
-            <img src="../assets/lessons/oarr6.svg" alt="">
-          </object>
+          <img src="../assets/lessons/oarr6.svg" alt="" class="lessons__arrow_m">
+          <img src="" alt="" class="lessons__arrow_d">
         </div>
     </div>
 
@@ -117,13 +111,13 @@ const slides = [
   
       .lessons__question {
         position: absolute;
-        top: 35%;
-        max-width: 165px;
+        top: 32%;
+        max-width: 160px;
         font-family: 'Montserrat-ExtraBold';
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
-        line-height: 29px;
+        line-height: 33px;
         text-align: center;
         color: #F6F6F6;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -183,8 +177,13 @@ const slides = [
         text-align: center;
         color: #ffffff;
       }
+
+      .lessons__arrow_d {
+        display: none;
+      }
     }
   }
+
 
   .carouselWrapper {
     margin: 0 auto;
@@ -199,6 +198,13 @@ const slides = [
     max-width: 60%;
     text-align: center;
     color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 600px) { 
+  .carousel {
+    max-width: 70%;
+    margin: 0 auto;
   }
 }
 </style>

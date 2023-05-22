@@ -6,7 +6,7 @@
     <span class="reg__info">ищешь команду единомышленников</span>
     <span class="reg__info">хочешь заниматься в удовольствие</span>
     <div class="reg__toForm">
-        <img src="../assets/register/lizaandgirl.png" alt="" class="reg__lizaAndGirld">
+        <div class="reg__lizaAndGirld"></div>
         <div class="reg__btnContainer">
             <button class="reg__btn" @click="$emit('changeModal')">Запись</button>
             <img src="../assets/register/purpInk.svg" alt="" class="reg__round">
@@ -62,7 +62,6 @@ const changingModal = () => {
         width: 100%;
         position: relative;
         bottom: 0px;
-        max-width: 800px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -70,8 +69,11 @@ const changingModal = () => {
         
         .reg__lizaAndGirld {
             width: 100%;
-            min-height: 370px;
-            object-fit: cover;
+            min-height: 500px;
+            max-height: 1200px;
+            background-image: url('../assets/register/lizaandgirl.png');
+            background-size: cover;
+            background-position-y: top;
         }
 
         .reg__btnContainer {
@@ -80,6 +82,7 @@ const changingModal = () => {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 10px;
 
             .reg__btn {
                 font-family: 'Montserrat-Light';
@@ -97,6 +100,31 @@ const changingModal = () => {
                 background-color: transparent;
             }
 
+        }
+    }
+
+    @media screen and (min-width: 600px) { 
+        .reg__title {
+            font-size: 60px;
+            margin-bottom: 100px;
+        }
+
+        .reg__info {
+            font-size: 25px;
+        }
+
+        .reg__round {
+            height: 200px;
+        }
+
+        .reg__btn {
+            top: 30% !important;
+            font-size: 60px !important;
+        }
+
+        .reg__lizaAndGirld {
+            background-image: url('../assets/register/lizaandgirl_d.png') !important;
+            background-size: contain !important;
         }
     }
 }

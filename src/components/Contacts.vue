@@ -31,8 +31,8 @@ defineExpose({
 
 <style scoped lang="scss">
 .contacts {
-  min-height: 100vh;
-  padding-top: 40%;
+  min-height: 690px;
+  padding-top: 70px;
   
   .contacts__title {
     font-family: 'Montserrat-Medium';
@@ -87,6 +87,21 @@ defineExpose({
 
     .contacts__link {
       cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 600px) { 
+    .contacts__title {
+      font-size: 80px;
+    }
+
+    .contacts__info {
+      font-size: 22px !important;
+      line-height: 24px !important;
+    }
+
+    .contacts__info {
+      max-width: 400px !important;
     }
   }
 }

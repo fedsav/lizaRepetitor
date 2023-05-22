@@ -23,12 +23,12 @@
         <div class="aboutme__experience aboutme__experience-right">
              <img src="../assets/aboutme/roundPURP.svg" alt="" class="aboutme__bigdot aboutme__bigdot-PU">
             <span class="aboutme__proff">Веду биолабораторию</span>
-            <span class="aboutme__description">каждую неделю по пятницам творим с ребеатми чудеса, познавая мир через призму естественнонаучного знания</span>
+            <span class="aboutme__description">каждую неделю по пятницам творим с ребятами чудеса, познавая мир через призму естественнонаучного знания</span>
         </div>
         <div class="aboutme__experience ">
             <img src="../assets/aboutme/roundOR.svg" alt="" class="aboutme__imgOR aboutme__bigdot aboutme__bigdot-OR">
             <span class="aboutme__proff">Работала в  музее</span>
-            <span class="aboutme__description">в зоологическом музеи МГУ 2 года, где проводила экскурсии , мастер-классы и интерактивные занятия</span>
+            <span class="aboutme__description">в зоологическом музее МГУ 2 года, где проводила экскурсии , мастер-классы и интерактивные занятия</span>
         </div>
     </article>
   </section>
@@ -128,8 +128,31 @@ defineExpose({
         .aboutme__experience-right {
             text-align: right;
         }
-
     }
+    @media screen and (min-width: 600px){ 
+
+        .aboutme__img {
+            height: 300px !important;
+            width: 300px !important;
+        }
+
+        .aboutme__title {
+            font-size: 2.8rem !important;
+        }
+        .aboutme__proff {
+            font-size: 2rem !important;
+        }
+
+        .aboutme__description {
+            font-size: 1.2rem !important;
+            line-height: 2rem !important;
+        }
+
+        .aboutme__achievements {
+            gap: 60px;
+        }
+      }
 }
+
 
 </style>

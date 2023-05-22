@@ -66,5 +66,27 @@
         line-height: 20px;
         margin-top: 36px;
     }
+
+    @media screen and (min-width: 600px) {
+        .format__title {
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+
+        .format__txt {
+            font-size: 40px !important;
+            line-height: 49px !important;
+        }
+
+        .format__image {
+            min-width: 100%;
+            min-height: 500px;
+        }
+
+        .format__location {
+            font-size: 30px;
+            line-height: 49px;
+        }
+     }
 }
 </style>

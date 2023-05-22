@@ -119,7 +119,7 @@ function sendForm(){
 }
 
 // Проверка отправки
-
+let formSend = ref(false)
 
 </script>
 
@@ -140,7 +140,7 @@ function sendForm(){
     height: 100%;
     padding-bottom: 50px;
     position: fixed;
-    overflow: scroll;
+    overflow-y: scroll;
     top: 0;
     z-index: 2;
 
@@ -183,6 +183,7 @@ function sendForm(){
                 border: none;
                 border-bottom: 1px solid #000;
                 width: 140px;
+                font-family: 'Montserrat-Light';
 
                 outline: none;
                 text-align: center;
@@ -248,6 +249,25 @@ function sendForm(){
             font-weight: 500;
             font-size: 25px;
             line-height: 44px;
+        }
+    }
+
+    @media screen and (min-width: 600px) { 
+        .form__title {
+            font-size: 3rem !important;
+        }
+
+        .form_inputName {
+            font-size: 1.3rem !important;
+        }
+
+        .form__req {
+            font-size: 0.8rem !important;
+        }
+
+        .modal__close {
+            height: 60px;
+            width: 60px;
         }
     }
 }

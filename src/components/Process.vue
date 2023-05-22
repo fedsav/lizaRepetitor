@@ -77,6 +77,7 @@
         .format__step {
             position: absolute;
 
+
             &_one {
                 max-width: 160px;
                 text-align: left;
@@ -117,6 +118,7 @@
 
             .format__arr {
                 position: absolute;
+                z-index: -1;
 
                 &_one {
                     left: 50%;
@@ -130,11 +132,13 @@
             
 
             .format__stepTxt {
+                position: relative;
                 font-family: 'Montserrat-Medium';
                 font-style: normal;
                 font-weight: 500;
                 font-size: 15px;
                 line-height: 18px;
+                z-index: 0;
             }
         }
     }
@@ -155,6 +159,30 @@
             &_italic {
                 font-family: 'Montserrat-Italic';
             }
+        }
+    }
+
+    @media screen and (min-width: 600px) { 
+        .format__stepTxt {
+            font-size: 25px !important;
+        }
+
+        .format__step {
+            max-width: 200px !important;
+        }
+        
+        .format__wrap {
+            margin: 100px 150px 0 150px;
+            
+        }
+        
+        .format__title_bot {
+            display: none;
+        }
+
+        .format__extra {
+            font-size: 20px !important;
+            line-height: 20px !important;
         }
     }
 }
