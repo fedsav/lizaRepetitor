@@ -25,7 +25,7 @@
     
             <div class="form__element form__element_col">
                 <label class="form_inputName" for="forU">Какова ценность этих занятий для тебя?</label>
-                <textarea class="form__input form__input_area" rows="2" cols="1" maxlength="51" name="forU" id="forU" 
+                <textarea class="form__input form__input_area" rows="2" cols="1" name="forU" id="forU" 
                     v-model="info.lessonsVal" 
                     @focus.prevent="">
                 </textarea>
@@ -33,7 +33,7 @@
     
             <div class="form__element form__element_col">
                 <label class="form_inputName" for="knowledge">Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</label>
-                <textarea class="form__input form__input_area" rows="2" cols="1" maxlength="51" name="knowledge" id="knowledge" 
+                <textarea class="form__input form__input_area" rows="2" cols="1" name="knowledge" id="knowledge" 
                     v-model="info.expectations" 
                     @focus.prevent="">
                 </textarea>
@@ -49,21 +49,22 @@
             <button class="form__submit" @click="emit('changingModal')" ref="btn">Записаться!</button>
         </form>
 
-
-    <div class="done" v-show="formSend">
-        <span class="done__txt">
-            Поздравляю, вы записаны!
-        </span>
-        <span class="done__txt">
-            Скоро я с вами свяжусь.
-        </span>
-    </div>
+        <transition>
+            <div class="done" v-show="formSend">
+                <span class="done__txt">
+                    Поздравляю, вы записаны!
+                </span>
+                <span class="done__txt">
+                    Скоро я с вами свяжусь.
+                </span>
+            </div>
+        </transition>
     <button type="submit" class="modal__close" @click="$emit('changeModal')"></button>
   </section>
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, watch } from 'vue';
 import axios from 'axios';
 import { TOKEN, CHAT_ID, URL } from '../data.js';
 
@@ -88,7 +89,7 @@ const info = reactive({
 });
 
 //Валидация
-let approved = ref(false);
+let approved = ref(true);
 
 function validate () {
    let arr = Object.values(info)
@@ -115,11 +116,24 @@ function sendForm(){
           parse_mode: 'HTML',
           text: message,
         })
+        
+        info.age = ''
+        info.name = ''
+        info.whatClass = ''
+        info.lessonsVal = ''
+        info.contact = ''
+        info.expectations = ''
+
+        alert('Поздравляю, вы записаны! Скоро я с вами свяжусь!')
     }
 }
 
 // Проверка отправки
 let formSend = ref(false)
+
+watch ((formSend) => {
+
+}) 
 
 </script>
 
@@ -127,7 +141,7 @@ let formSend = ref(false)
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .v-enter-from,
@@ -150,6 +164,7 @@ let formSend = ref(false)
         flex-direction: column;
         gap: 32px;
         width: 230px;
+        z-index: 1;
 
         .form__title {
             font-family: 'Montserrat-Medium';
@@ -244,6 +259,7 @@ let formSend = ref(false)
         align-items: center;
         text-align: center;
         background-color: rgba(255, 184, 176, 1);
+        z-index: 2;
 
         .done__txt {
             max-width: 60%;
