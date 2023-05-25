@@ -34,6 +34,10 @@
     margin-top: 50px;
     width: 100%;
     background-color: #D69F98;
+
+    @media screen and (min-width: 1200px) {
+        padding: 120px;
+    }
     
     .b-img {
         position: absolute;
@@ -41,7 +45,12 @@
         background-size:contain;
         background-position:  center;
         min-height: 100%;
-        width: 100%;
+        width: 400px;
+        
+        @media screen and (min-width: 600px) { 
+            top: 0;
+            background-position: left;
+        }
     }
     .plan {
         position: relative;
@@ -52,6 +61,16 @@
         flex-direction: column;
         align-items: center;
 
+        @media screen {
+            @media (min-width: 600px) { 
+                margin: 0 0 0 auto;
+            }
+            @media (min-width: 1200px) {
+                margin-right: 120px;
+                max-width: 600px;
+            }
+        }
+
 
         .plan__title {
             margin: 130px 25px 0 auto;
@@ -61,6 +80,17 @@
             font-size: 36px;
             line-height: 44px;
             color: #D8A1FF;
+
+            @media screen {
+                @media (min-width: 600px) {
+                    color: #FFFFFF;
+                    margin-top: 70px;
+                }
+                @media (min-width: 1200px)
+                 {
+                    font-size: 60px;
+                 }
+            }
         }
 
         .plan__list {
@@ -68,6 +98,10 @@
             list-style-type: none;
             max-width: 210px;
             margin-top: 83px;
+
+            @media screen and (min-width: 1200px) {
+                max-width: 300px;
+            }
 
             .plan__item {
                 position: relative;
@@ -79,6 +113,11 @@
                 color: #FFFFFF;
                 margin-top: 5px;
                 z-index: 2;
+
+                @media screen and (min-width: 1200px) {
+                    font-size: 35px;
+                    line-height: 40px;
+                }
             }
         }
 
@@ -86,10 +125,18 @@
             position: absolute;
             left: -20px;
             z-index: 1;
+
+            @media screen and (min-width: 600px) {
+                display: none;
+            }
         }
 
         .plan__decoration {
             position: absolute;
+
+            @media screen and (min-width: 600px) {
+                display: none;
+            }
 
             &_frog {
                 top: 283px;
@@ -115,16 +162,6 @@
                 top: 385px;
                 right: 129px;
             }
-        }
-    }
-
-    @media screen and (min-width: 600px) { 
-        .b-img { 
-            background-position: left;
-        }
-
-        .plan {
-            margin: 0 0 0 auto;
         }
     }
 }

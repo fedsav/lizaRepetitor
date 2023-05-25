@@ -33,6 +33,10 @@ defineExpose({
 .contacts {
   min-height: 690px;
   padding-top: 70px;
+
+  @media screen and (min-width: 1200px) {
+    padding: 120px;
+  }
   
   .contacts__title {
     font-family: 'Montserrat-Medium';
@@ -41,6 +45,10 @@ defineExpose({
     font-size: 36px;
     line-height: 44px;
     margin-left: 63px;
+
+    @media screen and (min-width: 600px) {
+      font-size: 80px;
+    } 
   }
 
   .contacts__content {
@@ -49,6 +57,10 @@ defineExpose({
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
+    @media screen and (min-width: 1200px) {
+      gap: 40px;
+    }
 
     .contacts__card {
       width: 100%;
@@ -72,6 +84,19 @@ defineExpose({
       font-size: 13px;
       line-height: 16px;
 
+      @media screen {
+        @media (min-width: 600px) {
+          font-size: 22px !important;
+          line-height: 24px !important;
+          max-width: 400px !important;
+        }
+        @media (min-width: 1200px) {
+          font-size: 36px !important;
+          line-height: 32px !important;
+          max-width: 600px !important;
+        } 
+      } 
+
       &_y {
         max-width: 230px;
       }
@@ -87,21 +112,16 @@ defineExpose({
 
     .contacts__link {
       cursor: pointer;
-    }
-  }
 
-  @media screen and (min-width: 600px) { 
-    .contacts__title {
-      font-size: 80px;
-    }
-
-    .contacts__info {
-      font-size: 22px !important;
-      line-height: 24px !important;
+      @media screen and (min-width: 1200px) {
+        height: 150px;
+        width: 150px;
+      }
     }
 
-    .contacts__info {
-      max-width: 400px !important;
+    .contacts__social {
+      height: 100%;
+      width: 100%;
     }
   }
 }

@@ -63,10 +63,10 @@
           color="transparent"
         >
           <div class="d-flex flex-column fill-height justify-center align-center">
-            <div class="text-h3 title">
+            <div class="text-h3 carousel__title">
               {{ slide.title }} 
             </div>
-            <div class="text-body-1 info">
+            <div class="text-body-1 carousel__info">
               {{ slide.info }}
             </div>
           </div>
@@ -95,6 +95,12 @@ const slides = [
   position: relative;
   padding-bottom: 30px;
 
+  @media screen and (min-width: 1200px) {
+    padding: 120px;
+    display: flex;
+    align-items: center;
+  }
+
   .lessons__wrapper {
     position: relative;
     display: flex;
@@ -102,6 +108,7 @@ const slides = [
     align-items: center;
     max-width: 400px;
     margin: 0 auto;
+
     .lessons__options {
       position: relative;
       display: flex;
@@ -184,27 +191,43 @@ const slides = [
     }
   }
 
+  @media screen {
+    .carousel {
+      @media screen and (min-width: 600px) { 
+          max-width: 70%;
+          margin: 0 auto;
+      }
 
+    }
+  } 
   .carouselWrapper {
     margin: 0 auto;
-  }
 
-  .title {
-    color: #ffffff;
-  }
+    @media screen and (min-width: 1200px) {
+      width: 70%;
+   }
 
-  .info {
-    margin-top: 40px;
-    max-width: 60%;
-    text-align: center;
-    color: #ffffff;
+    .carousel__title {
+      color: #ffffff;
+
+      @media screen and (min-width: 1280px) {
+        font-size: 70px !important;
+     }
+    }
+  
+    .carousel__info {
+      margin-top: 20px;
+      max-width: 70%;
+      text-align: center;
+      color: #ffffff;
+
+      @media screen and (min-width: 1280px) {
+        font-size: 24px !important;
+        line-height: 30px;
+     }
+    }
   }
 }
 
-@media screen and (min-width: 600px) { 
-  .carousel {
-    max-width: 70%;
-    margin: 0 auto;
-  }
-}
+
 </style>

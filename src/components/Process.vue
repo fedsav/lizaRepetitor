@@ -5,29 +5,23 @@
 
         <div class="format__step format__step_one">
             <span class="format__stepTxt">проходим материал по темам блока</span>
-            <object data="dotpurp1.svg" type="image/svg+xml" class="format__dot format__dot_purpOne">
-                <img src="../assets/process/dotpurp1.svg" alt="" >
-            </object>
-            <object data="mob_arr_or1.svg" type="image/svg+xml" class="format__arr format__arr_one">
-                <img src="../assets/process/mob_arr_or1.svg" alt="" >
-            </object>
+            <img src="../assets/process/dotpurp1.svg" alt="" class="format__dot format__dot_purpOne">
+            <img src="../assets/process/mob_arr_or1.svg" alt="" class="format__arr format__arr_one">
+
+            <img src="../assets/process/desc_arr_orange.svg" alt="" class="format__arr_d format__arr_d-or">
         </div>
         
         <div class="format__step format__step_two">
             <span class="format__stepTxt">закрепляем заданиями  из егэ</span>
-            <object data="dotor1.svg" type="image/svg+xml">
-                <img src="../assets/process/dotor1.svg" alt="" class="format__dot format__dot_orr">
-            </object>
-            <object data="mob_arr_or1.svg" type="image/svg+xml" class="format__arr format__arr_two">
-                <img src="../assets/process/mob_arr_or2.svg" alt="" >
-            </object>
+            <img src="../assets/process/dotor1.svg" alt="" class="format__dot format__dot_orr">
+            <img src="../assets/process/mob_arr_or2.svg" alt="" class="format__arr format__arr_two">
+
+            <img src="../assets/process/desc_arr_purp.svg" alt="" class="format__arr_d format__arr_d-pu">
         </div>
         
         <div class="format__step format__step_three">
             <span class="format__stepTxt">сдаем устный зачет по блоку</span>
-            <object data="dotpurp2.svg" type="image/svg+xml" class="format__dot format__dot_purpTwo">
-                <img src="../assets/process/dotpurp2.svg" alt="" >
-            </object>
+            <img src="../assets/process/dotpurp2.svg" alt="" class="format__dot format__dot_purpTwo">
         </div>
     </div>
 
@@ -65,6 +59,10 @@
         &_bot {
             transform: rotate(-90deg) translate(100%, 0);
             transform-origin: 200px 200px;
+
+            @media screen and (min-width: 600px) {
+                display: none;
+            } 
         }
     }
 
@@ -74,9 +72,13 @@
         min-height: 290px;
         margin: 52px auto 0 auto;
 
+        @media screen and (min-width: 1200px) {
+            min-width: 1000px;
+            min-height: 600px;
+        }
+
         .format__step {
             position: absolute;
-
 
             &_one {
                 max-width: 160px;
@@ -94,11 +96,20 @@
                 top: 230px;
                 left: 30px;
                 max-width: 113px;
+
+                @media screen and (min-width: 1200px) {
+                    max-width: 300px;
+                    top: 500px;
+                }
             }
 
             .format__dot {
                 position: absolute;
                 z-index: -1;
+
+                @media screen and (min-width: 1200px) {
+                    width: 70px;
+                }
 
                 &_purpOne {
                     top: 1px;
@@ -120,6 +131,10 @@
                 position: absolute;
                 z-index: -1;
 
+                @media screen and (min-width: 1200px) {
+                    display: none;
+                }
+
                 &_one {
                     left: 50%;
                     top: 20px;
@@ -129,7 +144,32 @@
                     right: 100%;
                 }
             }
-            
+
+
+            //Десктопные стрелки
+
+            .format__arr_d {
+                display: none;
+                position: absolute;
+
+                @media screen and (min-width: 1200px) {
+                    display: block;
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                .format__arr_d-or {
+                    top: -20px;
+                    left: 100px;
+                }
+
+                .format__arr_d-pu {
+                    right: 0;
+                    top: 120px;
+                }
+            }
+
+            //Конец десктопных стрелок
 
             .format__stepTxt {
                 position: relative;
@@ -139,6 +179,16 @@
                 font-size: 15px;
                 line-height: 18px;
                 z-index: 0;
+
+                @media screen {
+                    @media (min-width: 600px) {
+                        font-size: 25px;
+                    }
+                    @media (min-width: 1200px) {
+                        font-size: 30px;
+                        line-height: 30px;
+                    } 
+                } 
             }
         }
     }
@@ -147,6 +197,16 @@
         align-self: flex-end;
         max-width: 293px;
         margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 60px;
+
+        @media screen and (min-width: 1200px) {
+            max-width: 100%;
+            flex-direction: row;
+            justify-content: center;
+        }
 
         .format__extra {
             margin-top: 25px;
@@ -156,33 +216,23 @@
             line-height: 16px;
             text-align: right;
 
+            @media screen {
+                @media (min-width: 600px) {
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+                @media (min-width: 1200px) {
+                    font-size: 40px;
+                    line-height: 50px;
+                    text-align: center;
+                    border: 10px dashed #FF7262;
+                    padding: 20px;
+                }
+            } 
+
             &_italic {
                 font-family: 'Montserrat-Italic';
             }
-        }
-    }
-
-    @media screen and (min-width: 600px) { 
-        .format__stepTxt {
-            font-size: 25px !important;
-        }
-
-        .format__step {
-            max-width: 200px !important;
-        }
-        
-        .format__wrap {
-            margin: 100px 150px 0 150px;
-            
-        }
-        
-        .format__title_bot {
-            display: none;
-        }
-
-        .format__extra {
-            font-size: 20px !important;
-            line-height: 20px !important;
         }
     }
 }

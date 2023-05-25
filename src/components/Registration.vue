@@ -35,6 +35,11 @@ const changingModal = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (min-width: 1200px) {
+        padding-right: 100px;
+    }
+
     
     .reg__title {
         font-family: 'Montserrat-Italic';
@@ -43,6 +48,16 @@ const changingModal = () => {
         line-height: 44px;
         color: #E5E5E5;
         margin-bottom: 28px;
+
+        @media screen {
+            @media (min-width: 600px) {
+                font-size: 60px;
+                margin-bottom: 100px;
+            }
+            @media (min-width: 1200px) {
+                align-self: flex-end;
+            } 
+        } 
     }
 
     .reg__info {
@@ -52,6 +67,15 @@ const changingModal = () => {
         line-height: 20px;
         color: #FFFFFF;
         margin-bottom: 20px;
+
+        @media screen {
+            @media (min-width: 600px) { 
+                font-size: 25px;
+            }
+            @media (min-width: 1200px){
+                align-self: flex-end;
+            }
+        } 
 
         &:last-of-type {
             margin-bottom: 0;
@@ -74,6 +98,16 @@ const changingModal = () => {
             background-image: url('../assets/register/lizaandgirl.png');
             background-size: cover;
             background-position-y: top;
+
+            @media screen {
+                @media (min-width: 600px) {
+                    background-image: url('../assets/register/lizaandgirl_d.png') !important;
+                    background-size: contain !important;
+                }
+                @media (min-width: 1200px) {
+                    min-height: 600px;
+                }
+            } 
         }
 
         .reg__btnContainer {
@@ -83,6 +117,10 @@ const changingModal = () => {
             flex-direction: column;
             align-items: center;
             margin-bottom: 10px;
+
+            @media screen and (min-width: 1200px) {
+                align-self: flex-end;
+            }
 
             .reg__btn {
                 font-family: 'Montserrat-Light';
@@ -98,34 +136,20 @@ const changingModal = () => {
                 top: 20%;
                 border: none;
                 background-color: transparent;
-            }
 
+                @media screen and (min-width: 600px) { 
+                    top: 30%;
+                    font-size: 60px;
+                }
+            }
         }
     }
 
     @media screen and (min-width: 600px) { 
-        .reg__title {
-            font-size: 60px;
-            margin-bottom: 100px;
-        }
-
-        .reg__info {
-            font-size: 25px;
-        }
-
         .reg__round {
             height: 200px;
         }
 
-        .reg__btn {
-            top: 30% !important;
-            font-size: 60px !important;
-        }
-
-        .reg__lizaAndGirld {
-            background-image: url('../assets/register/lizaandgirl_d.png') !important;
-            background-size: contain !important;
-        }
     }
 }
 </style>

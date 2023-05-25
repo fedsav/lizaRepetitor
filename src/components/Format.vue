@@ -22,6 +22,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    @media screen and (min-width: 1200px) {
+        padding: 120px;
+    }
 
     .format__title {
         font-family: 'Montserrat-Medium';
@@ -29,6 +33,16 @@
         font-weight: 500;
         font-size: 36px;
         line-height: 44px;
+
+        @media screen {
+            @media  (min-width: 600px) {
+                font-size: 50px;
+                margin-bottom: 40px;
+            }
+            @media (min-width: 1200px) {
+                font-size: 70px;
+            }
+        } 
     }
 
     .format__description {
@@ -39,6 +53,15 @@
         align-items: flex-start;
         max-width: 334px;
 
+        @media screen and (min-width: 1200px) {
+            min-width: 100%;
+            text-align: center;
+            flex-direction: row;
+            gap: 40px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
         .format__txt {
             font-family: 'Montserrat-Medium';
             font-style: normal;
@@ -47,6 +70,16 @@
             line-height: 20px;
             margin-top: 2px;
             text-align: left;
+
+            @media screen {
+                @media  (min-width: 600px) {
+                    font-size: 40px;
+                    line-height: 49px;
+                }
+                @media (min-width: 1200px) {
+                    text-align: center;
+                }
+            } 
         }
     }
 
@@ -56,6 +89,17 @@
         min-height: 300px;
         background-image: url('../assets/format.png');
         background-size: cover;
+
+        @media screen {
+            @media (min-width: 600px) {
+                min-width: 100%;
+                min-height: 500px;
+            }
+            @media (min-width: 1200px) {
+                max-width: 40%;
+                background-size: contain;
+            }
+        } 
     }
 
     .format__location {
@@ -65,28 +109,16 @@
         font-size: 16px;
         line-height: 20px;
         margin-top: 36px;
+
+        @media screen {
+            @media  (min-width: 600px) {
+                font-size: 30px;
+
+            }
+            @media (min-width: 1200px) {
+                font-size: 50px;
+            }
+        } 
     }
-
-    @media screen and (min-width: 600px) {
-        .format__title {
-            font-size: 50px;
-            margin-bottom: 40px;
-        }
-
-        .format__txt {
-            font-size: 40px !important;
-            line-height: 49px !important;
-        }
-
-        .format__image {
-            min-width: 100%;
-            min-height: 500px;
-        }
-
-        .format__location {
-            font-size: 30px;
-            line-height: 49px;
-        }
-     }
 }
 </style>

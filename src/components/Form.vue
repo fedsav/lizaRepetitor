@@ -6,25 +6,25 @@
             <legend class="form__title">несколько слов о тебе</legend>
             <div class="form__element">
                 <label class="form_inputName" for="name">Твое имя:</label>
-                <input type="text" class="form__input" name="name" id="name" 
+                <input type="text" class="form__input form__input_normal" name="name" id="name" 
                     v-model="info.name" 
                     @focus.prevent="">
             </div>
     
             <div class="form__element">
                 <label class="form_inputName" for="age">Возраст:</label>
-                <input type="text" class="form__input" name="age" id="age"
+                <input type="text" class="form__input form__input_normal" name="age" id="age"
                     v-model="info.age" 
                     @focus.prevent="">
             </div>
     
             <div class="form__element">
                 <label class="form_inputName" for="class">Класс:</label>
-                <input type="text" class="form__input" name="class" id="class" 
+                <input type="text" class="form__input form__input_normal" name="class" id="class" 
                     v-model="info.whatClass" 
                     @focus.prevent="">
             </div>
-    
+            
             <div class="form__element form__element_col">
                 <label class="form_inputName" for="forU">Какова ценность этих занятий для тебя?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="forU" id="forU" 
@@ -43,7 +43,7 @@
     
             <div class="form__element form__element_col">
                 <label class="form_inputName" for="link">Ссылка на соц. сети/почту, для обратной связи:</label>
-                <input type="text" class="form__input" name="link" id="link" 
+                <input type="text" class="form__input form__input_normal" name="link" id="link" 
                     v-model="info.contact" 
                     @focus.prevent="">
             </div>
@@ -158,6 +158,18 @@ function sendForm(){
         gap: 32px;
         width: 230px;
 
+        @media screen and (min-width: 1200px) {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: 
+            'title title'
+            'normal normal'
+            'area area';
+            align-items: center;
+        }
+
 
         .form__title {
             font-family: 'Montserrat-Medium';
@@ -166,6 +178,17 @@ function sendForm(){
             font-size: 36px;
             line-height: 44px;
             margin-bottom: 8px;
+            grid-area: title;
+
+            @media screen {
+                @media  (min-width: 600px) {
+                    font-size: 42px;
+                }
+                @media (min-width: 1200px) {
+                    font-size: 60px;
+                    min-width: 700px;
+                } 
+            } 
         }
 
         .form__element {
@@ -184,17 +207,32 @@ function sendForm(){
                 font-weight: 300;
                 font-size: 15px;
                 line-height: 18px;
+
+                @media screen {
+                    @media (min-width: 600px) {
+                        font-size: 22px;
+                    }
+                    @media (min-width: 1200px) {
+                        font-size: 26px;
+                        line-height: 30px;
+                    }
+                } 
             }
 
             .form__input {
                 background-color: transparent;
                 border-bottom: 1px solid #000;
+                border-radius: 0px;
                 width: 140px;
                 font-family: 'Montserrat-Light';
 
                 outline: none;
                 text-align: center;
                 letter-spacing: 2px;
+
+                @media screen and (min-width: 1200px) {
+                    width: 250px;
+                }
 
                 &_area {
                     border-top: none;
@@ -203,6 +241,11 @@ function sendForm(){
                     text-align: left;
                     height: 44px;
                     resize: none;
+                    grid-area: area;
+                }
+
+                &_normal {
+                    grid-area: normal;
                 }
             }
         }
@@ -225,6 +268,10 @@ function sendForm(){
             font-family: 'Montserrat-Italic';
             font-size: 10px;
             line-height: 20px;
+
+            @media screen and (min-width: 600px) {
+                font-size: 0.8rem;
+            }
         }
     }
     
@@ -238,7 +285,12 @@ function sendForm(){
         border: none;
         background-image: url('../assets/close.svg');
         background-size: cover;
-    }
+
+        @media screen and (min-width: 600px) {
+            height: 60px;
+            width: 60px;
+        }
+        }
     .done {
         padding-top: 50%;
         position: relative;
@@ -259,25 +311,6 @@ function sendForm(){
             font-weight: 500;
             font-size: 25px;
             line-height: 44px;
-        }
-    }
-
-    @media screen and (min-width: 600px) { 
-        .form__title {
-            font-size: 3rem !important;
-        }
-
-        .form_inputName {
-            font-size: 1.3rem !important;
-        }
-
-        .form__req {
-            font-size: 0.8rem !important;
-        }
-
-        .modal__close {
-            height: 60px;
-            width: 60px;
         }
     }
 }

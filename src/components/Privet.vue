@@ -42,6 +42,15 @@ export default {
         display: flex;
         justify-content: end;
         gap: 20px;
+
+        @media screen {
+          @media (min-width: 600px) {
+            gap: 35px;
+          }
+          @media (min-width: 1200px) {
+            gap: 100px;
+          }
+        }
     }
 
     .hello__text {
@@ -50,6 +59,10 @@ export default {
         font-size: 13px;
         line-height: 16px;
         cursor: pointer;
+
+        @media screen and (min-width: 600px) { 
+          font-size: 1.8rem;
+        }
         
         &:last-child {
             margin-right: 30px;
@@ -60,6 +73,10 @@ export default {
         margin: 77px 0 0 23px;
         position: relative;
         z-index: 2;
+
+        @media screen and (min-width: 1200px) {
+          height: 300px;
+        } 
     }
 
     .hello__bio1 {
@@ -94,35 +111,33 @@ export default {
         font-size: 15px;
         line-height: 18px;
     }
+    @media screen and (min-width: 600px) { 
+
+      .hello__bio1, .hello__bio2, .hello__italic {
+        font-size: 2rem;
+        width: 50%;
+        line-height: 2rem;
+      }
+    }
 
     .hello__liza {
         background-image: url('../assets/hello/m_liza.png');
         background-repeat: no-repeat;
         height: 476px;
-        width: 264px; position: absolute;
+        width: 264px; 
+        position: absolute;
         top: 191px;
         right: 0;
         z-index: 1;
         object-fit: contain;
+
+        @media screen and (min-width: 1200px) {
+          background-image: url('../assets/hello/d_liza.png');
+          background-size: cover;
+          height: 600px;
+          width: 600px;
+        }
     }
-
-    @media screen and (min-width: 600px) { 
-
-        .hello__header {
-          gap: 35px;
-        }
-        .hello__text {
-          font-size: 1.8rem;
-        }
-        .hello__bio1, .hello__bio2, .hello__italic {
-          font-size: 2rem !important;
-        }
-
-        .hello__bio1, .hello__bio2, .hello__italic {
-            width: 50% !important;
-            line-height: 2rem;
-        }
-      }
 }
 
 

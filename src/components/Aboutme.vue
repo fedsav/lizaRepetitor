@@ -53,6 +53,10 @@ defineExpose({
         display: flex;
         justify-content: end;
 
+        @media screen and (min-width: 1200px) {
+            margin-right: 150px;
+        }
+
         .aboutme__title {
             position: relative;
             left: 25px;
@@ -63,6 +67,10 @@ defineExpose({
             font-size: 36px;
             line-height: 44px;
             z-index: 2;
+
+            @media screen and (min-width: 600px){ 
+                font-size: 2.8rem;
+            }
         }
 
         .aboutme__e {
@@ -76,6 +84,17 @@ defineExpose({
             object-fit: cover;
             margin-right: 19px;
             z-index: 1;
+
+            @media screen {
+                @media (min-width: 600px){
+                    height: 300px;
+                    width: 300px;
+                }
+                @media (min-width: 1200px) {
+                    height: 400px;
+                    width: 400px;
+                } 
+             }
         }
     }
 
@@ -85,12 +104,26 @@ defineExpose({
         flex-direction: column;
         gap: 23px;
 
+        @media screen {
+            @media (min-width: 600px) { 
+                gap: 60px;
+            }
+            @media (min-width: 1200px) {
+                margin: 100px 120px 0 120px;
+                gap: 0;
+            }
+        }
+
         .aboutme__experience { 
             display: flex;
             flex-direction: column;
             gap: 6px;
             position: relative;
             z-index: 2;
+
+            @media screen and (min-width: 1200px) {
+                max-width: 40%;
+            }
 
             .aboutme__bigdot {
                 position: absolute;
@@ -113,6 +146,16 @@ defineExpose({
                 font-size: 15px;
                 line-height: 18px;
                 z-index: 2;
+
+                @media screen {
+                   @media (min-width: 600px) { 
+                        font-size: 32px;
+                    }
+                    @media (min-width: 1200px) {
+                        font-size: 52px;
+                        line-height: 40px;
+                    }
+                } 
             }
     
             .aboutme__description {
@@ -122,37 +165,28 @@ defineExpose({
                 font-size: 12px;
                 line-height: 15px;
                 z-index: 2;
+
+                @media screen {
+                    @media (min-width: 600px) { 
+                        font-size: 24px;
+                        line-height: 30px;
+                     }
+                     @media (min-width: 1200px) {
+                        margin-top: 20px;
+                        font-size: 28px;
+                        line-height: 40px;
+                     }
+                 } 
             }
         }
 
         .aboutme__experience-right {
             text-align: right;
+
+            @media screen and (min-width: 1200px) {
+                align-self: flex-end;
+            }
         }
     }
-    @media screen and (min-width: 600px){ 
-
-        .aboutme__img {
-            height: 300px !important;
-            width: 300px !important;
-        }
-
-        .aboutme__title {
-            font-size: 2.8rem !important;
-        }
-        .aboutme__proff {
-            font-size: 2rem !important;
-        }
-
-        .aboutme__description {
-            font-size: 1.2rem !important;
-            line-height: 2rem !important;
-        }
-
-        .aboutme__achievements {
-            gap: 60px;
-        }
-      }
 }
-
-
 </style>
