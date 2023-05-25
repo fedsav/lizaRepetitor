@@ -200,12 +200,13 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-        padding: 0 60px;
+
 
         @media screen and (min-width: 600px) {
             max-width: 100%;
             flex-direction: row;
             justify-content: center;
+            padding: 0 60px;
         }
 
         .format__extra {
