@@ -202,7 +202,7 @@
         gap: 40px;
         padding: 0 60px;
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 600px) {
             max-width: 100%;
             flex-direction: row;
             justify-content: center;
@@ -220,11 +220,12 @@
                 @media (min-width: 600px) {
                     font-size: 20px;
                     line-height: 20px;
+                    text-align: center;
+                    margin-top: 90px;
                 }
                 @media (min-width: 1200px) {
                     font-size: 40px;
                     line-height: 50px;
-                    text-align: center;
                     border: 10px dashed #FF7262;
                     padding: 20px;
                 }

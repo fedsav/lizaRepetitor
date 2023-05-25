@@ -118,8 +118,9 @@ const slides = [
   
       .lessons__question {
         position: absolute;
-        top: 32%;
+        top: 35%;
         max-width: 160px;
+        max-height: 160px;
         font-family: 'Montserrat-ExtraBold';
         font-style: normal;
         font-weight: 800;
@@ -165,7 +166,7 @@ const slides = [
 
       &_motivation {
         flex-direction: column-reverse;
-        left: 151px;
+        left: 135px;
         top: 460px;
       }
 

@@ -42,13 +42,14 @@
     .b-img {
         position: absolute;
         background-image: url('../assets/plan/m_plan.png');
-        background-size:contain;
+        background-size: cover;
         background-position:  center;
         min-height: 100%;
-        width: 400px;
+        width: 100%;
         
         @media screen and (min-width: 600px) { 
             top: 0;
+            background-size: contain;
             background-position: left;
         }
     }

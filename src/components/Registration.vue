@@ -102,9 +102,10 @@ const changingModal = () => {
             @media screen {
                 @media (min-width: 600px) {
                     background-image: url('../assets/register/lizaandgirl_d.png') !important;
-                    background-size: contain !important;
+                    background-size: cover !important;
                 }
-                @media (min-width: 1200px) {
+                @media (min-width: 1000px) {
+                    background-size: contain !important;
                     min-height: 600px;
                 }
             } 
