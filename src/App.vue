@@ -24,7 +24,7 @@ export default {
     methods: {
     goToSection (value) {
       window.scrollTo({
-        top: (this.$refs[(value)].main.getBoundingClientRect().y - 20),
+        top: (this.$refs[(value)].main.getBoundingClientRect().y),
         behavior: 'smooth',
       })
     }
