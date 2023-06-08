@@ -17,21 +17,24 @@
                 <label class="form__inputName" for="age">Возраст:</label>
                 <input type="text" class="form__input form__input_normal" name="age" id="age"
                     v-model="info.age"  
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
             </div>
     
             <div class="form__element">
                 <label class="form__inputName" for="class">Класс:</label>
                 <input type="text" class="form__input form__input_normal" name="class" id="class" 
                     v-model="info.whatClass"  
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
             </div>
             
             <div class="form__element form__element_col">
                 <label class="form__inputName" for="forU">Какова ценность этих занятий для тебя?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="forU" id="forU" 
                     v-model="info.lessonsVal"  
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
                 </textarea>
             </div>
     
@@ -39,7 +42,8 @@
                 <label class="form__inputName" for="knowledge">Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="knowledge" id="knowledge" 
                     v-model="info.expectations"  
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
                 </textarea>
             </div>
     
@@ -47,7 +51,8 @@
                 <label class="form__inputName" for="link">Ссылка на соц. сети/почту, для обратной связи:</label>
                 <input type="text" class="form__input form__input_normal" name="link" id="link" 
                     v-model="info.contact"  
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
             </div>
             <span class="form__req">* Все поля обязательны для заполнения</span>
             <button class="form__submit" @click="emit('changingModal')" ref="btn" :disabled="!approved">Записаться!</button>
