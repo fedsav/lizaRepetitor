@@ -55,7 +55,7 @@
                     @focusout="checkInput">
             </div>
             <span class="form__req">* Все поля обязательны для заполнения</span>
-            <button class="form__submit" @click="emit('changingModal')" ref="btn" :disabled="!approved">Записаться!</button>
+            <button class="form__submit" @click="emit('changingModal')" ref="btn">Записаться!</button>
         </form>
 
         <div class="done" v-else>
@@ -285,19 +285,12 @@ function sendForm() {
             line-height: 44px;
             width: 180px;
             cursor: pointer;
-
+            background-color: rgba(201, 201, 201, 0.5);
             
             border: 2px solid black;
             border-radius: 15px;
             padding: 10px;
 
-            &:disabled {
-                background-color: rgba(201, 201, 201, 0.5);
-            }
-
-            &:enabled {
-                background-color: rgba(142, 250, 91, 0.5);
-            }
         }
 
         .form__req {
