@@ -2,53 +2,61 @@
   <section class="wrapper" @submit.prevent="sendForm">
     <transition>
         
-        <form action="" class="form"  @submit.prevent="" v-if="!formSend">
+        <form action="" class="form"  @submit.prevent="" v-if="!formSend" ref="form">
             <legend class="form__title">несколько слов о тебе</legend>
             <div class="form__element">
-                <label class="form_inputName" for="name">Твое имя:</label>
+                <label class="form__inputName" for="name">Твое имя:</label>
                 <input type="text" class="form__input form__input_normal" name="name" id="name" 
                     v-model="info.name" 
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput"
+                    >
             </div>
     
             <div class="form__element">
-                <label class="form_inputName" for="age">Возраст:</label>
+                <label class="form__inputName" for="age">Возраст:</label>
                 <input type="text" class="form__input form__input_normal" name="age" id="age"
                     v-model="info.age" 
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
             </div>
     
             <div class="form__element">
-                <label class="form_inputName" for="class">Класс:</label>
+                <label class="form__inputName" for="class">Класс:</label>
                 <input type="text" class="form__input form__input_normal" name="class" id="class" 
                     v-model="info.whatClass" 
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
             </div>
             
             <div class="form__element form__element_col">
-                <label class="form_inputName" for="forU">Какова ценность этих занятий для тебя?</label>
+                <label class="form__inputName" for="forU">Какова ценность этих занятий для тебя?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="forU" id="forU" 
                     v-model="info.lessonsVal" 
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
                 </textarea>
             </div>
     
             <div class="form__element form__element_col">
-                <label class="form_inputName" for="knowledge">Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</label>
+                <label class="form__inputName" for="knowledge">Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="knowledge" id="knowledge" 
                     v-model="info.expectations" 
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
                 </textarea>
             </div>
     
             <div class="form__element form__element_col">
-                <label class="form_inputName" for="link">Ссылка на соц. сети/почту, для обратной связи:</label>
+                <label class="form__inputName" for="link">Ссылка на соц. сети/почту, для обратной связи:</label>
                 <input type="text" class="form__input form__input_normal" name="link" id="link" 
                     v-model="info.contact" 
-                    @focus.prevent="">
+                    @focus.prevent=""
+                    @focusout="checkInput">
             </div>
             <span class="form__req">* Все поля обязательны для заполнения</span>
             <button class="form__submit" @click="emit('changingModal')" ref="btn">Записаться!</button>
+            
         </form>
 
         <div class="done" v-else>
@@ -67,7 +75,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch } from 'vue';
+import { ref, reactive } from 'vue';
 import axios from 'axios';
 import { TOKEN, CHAT_ID, URL } from '../data.js';
 
@@ -78,6 +86,18 @@ defineProps({
 const emit = defineEmits(['changeModal'])
 const changingModal = () => {
     emit ('changeModal')
+}
+
+// проверка поля + анимация
+
+function checkInput (event) {
+    if (event.target.value === '') {
+        event.target.classList.add('form__input_warning', 'go-shake')
+        event.target.previousSibling.classList.add('form__inputName_warning')
+    } else {
+        event.target.classList.remove('form__input_warning')
+        event.target.previousSibling.classList.remove('form__inputName_warning')
+    }
 }
 
 // Данные полей
@@ -152,7 +172,7 @@ function sendForm(){
     z-index: 2;
 
     .form {
-        margin-left: 14px;
+        padding-left: 14px;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -201,12 +221,16 @@ function sendForm(){
                 flex-direction: column;
             }
 
-            .form_inputName {
+            .form__inputName {
                 font-family: 'Montserrat-Light';
                 font-style: normal;
                 font-weight: 300;
                 font-size: 15px;
                 line-height: 18px;
+
+                &_warning {
+                    color: red;
+                }
 
                 @media screen {
                     @media (min-width: 600px) {
@@ -218,6 +242,7 @@ function sendForm(){
                     }
                 } 
             }
+
 
             .form__input {
                 background-color: transparent;
@@ -246,6 +271,10 @@ function sendForm(){
 
                 &_normal {
                     grid-area: normal;
+                }
+
+                &_warning {
+                    border-bottom: 2px solid red;
                 }
             }
         }
@@ -314,4 +343,33 @@ function sendForm(){
         }
     }
 }
+
+// трясучка
+
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  .go-shake {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
 </style>
