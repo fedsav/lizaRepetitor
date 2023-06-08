@@ -16,47 +16,41 @@
             <div class="form__element">
                 <label class="form__inputName" for="age">Возраст:</label>
                 <input type="text" class="form__input form__input_normal" name="age" id="age"
-                    v-model="info.age" 
-                    @focus.prevent=""
-                    @focusout="checkInput">
+                    v-model="info.age"  
+                    @focus.prevent="">
             </div>
     
             <div class="form__element">
                 <label class="form__inputName" for="class">Класс:</label>
                 <input type="text" class="form__input form__input_normal" name="class" id="class" 
-                    v-model="info.whatClass" 
-                    @focus.prevent=""
-                    @focusout="checkInput">
+                    v-model="info.whatClass"  
+                    @focus.prevent="">
             </div>
             
             <div class="form__element form__element_col">
                 <label class="form__inputName" for="forU">Какова ценность этих занятий для тебя?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="forU" id="forU" 
-                    v-model="info.lessonsVal" 
-                    @focus.prevent=""
-                    @focusout="checkInput">
+                    v-model="info.lessonsVal"  
+                    @focus.prevent="">
                 </textarea>
             </div>
     
             <div class="form__element form__element_col">
                 <label class="form__inputName" for="knowledge">Какие у тебя ожидания от занятий и какие результаты ты хочешь получить?</label>
                 <textarea class="form__input form__input_area" rows="2" cols="1" name="knowledge" id="knowledge" 
-                    v-model="info.expectations" 
-                    @focus.prevent=""
-                    @focusout="checkInput">
+                    v-model="info.expectations"  
+                    @focus.prevent="">
                 </textarea>
             </div>
     
             <div class="form__element form__element_col">
                 <label class="form__inputName" for="link">Ссылка на соц. сети/почту, для обратной связи:</label>
                 <input type="text" class="form__input form__input_normal" name="link" id="link" 
-                    v-model="info.contact" 
-                    @focus.prevent=""
-                    @focusout="checkInput">
+                    v-model="info.contact"  
+                    @focus.prevent="">
             </div>
             <span class="form__req">* Все поля обязательны для заполнения</span>
-            <button class="form__submit" @click="emit('changingModal')" ref="btn">Записаться!</button>
-            
+            <button class="form__submit" @click="emit('changingModal')" ref="btn" :disabled="!approved">Записаться!</button>
         </form>
 
         <div class="done" v-else>
@@ -111,7 +105,7 @@ const info = reactive({
 });
 
 //Валидация
-let approved = ref(true);
+let approved = false;
 
 function validate () {
    let arr = Object.values(info)
@@ -120,7 +114,7 @@ function validate () {
         approved = false
     } else {
         approved = true
-    }
+        }
    }
 }
 
@@ -134,7 +128,7 @@ function clear () {
 // Отправка
 let formSend = ref(false);
 
-function sendForm(){
+function sendForm() {
     validate()
     if (approved) {
 
@@ -287,10 +281,18 @@ function sendForm(){
             width: 180px;
             cursor: pointer;
 
-            background-color: rgba(201, 201, 201, 0.5);
+            
             border: 2px solid black;
             border-radius: 15px;
             padding: 10px;
+
+            &:disabled {
+                background-color: rgba(201, 201, 201, 0.5);
+            }
+
+            &:enabled {
+                background-color: rgba(142, 250, 91, 0.5);
+            }
         }
 
         .form__req {
