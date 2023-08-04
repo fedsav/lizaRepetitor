@@ -4,7 +4,7 @@
     <div class="format__description">
         <span class="format__txt">2 раза в неделю</span>
         <span class="format__txt">по 1,5 часа</span>
-        <span class="format__txt">1500 рублей занятие</span>
+        <span class="format__txt">1700 рублей занятие</span>
     </div>
     <div class="format__image"></div>
     <span class="format__location">центр Москвы - метро Чистые пруды </span>
