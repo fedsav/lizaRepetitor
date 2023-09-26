@@ -1,5 +1,12 @@
-Hey!
 
-This is an app i made for my friend Liza. She's a biology and chemisty tutor. Here you can sing up to her classes!
+# Liza Repetitor app 🌎
+That app is made for my friend Liza, who is a biology tutor. With this app you can sign up for her courses.
 
-preview here: lrozhkova.vercel.app
+Made with Vue, vuetify and Telegram API.
+
+
+
+
+## Preview
+
+lrozhkova.vercel.app
