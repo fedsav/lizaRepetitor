@@ -9,4 +9,4 @@ Made with Vue, vuetify and Telegram API.
 
 ## Preview
 
-lrozhkova.vercel.app
+https://lrozhkova.vercel.app
